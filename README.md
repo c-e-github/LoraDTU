@@ -1,5 +1,9 @@
 # LoraDTU
 
+####################################################################################
+This readme file is not yet adapted to LoraDTU !!!
+(At the moment it is just a placeholder)
+####################################################################################
 
 ## Background
 
