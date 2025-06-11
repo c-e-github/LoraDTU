@@ -1,0 +1,12 @@
+LoraDTU - ESP32 firmware to control HoyMiles Inverter
+
+Copyright (C) 2024 C-E and others
+
+LoraDTU is provided under:
+
+    SPDX-License-Identifier: GPL-2.0-or-later
+
+Being under the terms of the GNU General Public License version 2
+or any later version, according with:
+
+    LICENSE
