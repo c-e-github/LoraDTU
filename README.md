@@ -3,8 +3,8 @@
 A control unit for an inverter connected to a battery, charged by a balcony solar station.
 
 
-###########################################################################################
-This readme file is not yet adapted to LoraDTU !!! (At the moment it is just a placeholder) ###########################################################################################
+###############################################################################
+This readme file is not yet adapted to LoraDTU !!! (At the moment it is just a placeholder) ###############################################################################
 
 
 ## Background
@@ -22,7 +22,7 @@ LoraDTU is available free of charge under the open source licence (GNU General P
 
 ## Screenshots
 
-Several screenshots of the frontend can be found here: [Screenshots](docs/screenshots/README.md)
+To be updated: Several screenshots of the frontend can be found here: [Screenshots](docs/screenshots/README.md)
 
 
 ## Currently supported Inverters
@@ -68,7 +68,7 @@ Several screenshots of the frontend can be found here: [Screenshots](docs/screen
 
 
 Sample Picture:
-
+To be updated:
 ![NodeMCU-ESP32](docs/nodemcu-esp32.png)
 
 
