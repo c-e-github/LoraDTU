@@ -1,13 +1,11 @@
 # LoraDTU
 
-<<<<<<< HEAD
 A control unit for an inverter connected to a battery, charged by a balcony solar station.
-=======
-####################################################################################  
-This readme file is not yet adapted to LoraDTU !!!
-(At the moment it is just a placeholder)
-####################################################################################
->>>>>>> d699ddde013d92e3fa08abfc16e59c4036ea6b06
+
+
+###########################################################################################
+This readme file is not yet adapted to LoraDTU !!! (At the moment it is just a placeholder) ###########################################################################################
+
 
 ## Background
 
