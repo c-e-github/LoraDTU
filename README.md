@@ -1,6 +1,6 @@
 # LoraDTU
 
-A control unit for an inverter connected to a battery, charged by a balcony solar station.
+A control unit for an inverter connected to a battery, charged by a balcony solar station, receiving ectricity power data via LoRa radio.
 
 
 ###############################################################################  
