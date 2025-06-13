@@ -9,9 +9,9 @@ This readme file is not yet adapted to LoraDTU !!! (At the moment it is just a p
 
 ## Background
 
-LoraDTU is based on [OpenDTU](https://github.com/tbnobody/OpenDTU). The aim of the redevelopment was to control the inverter output depending on the current power demand in order to optimise the use of the battery integrated in the system. All adjustments were only made for a special system with a Hoymiles HM-800 and a 24 V LiFePO4 battery.
+LoraDTU is based on [OpenDTU](https://github.com/tbnobody/OpenDTU) (by the way, a fantastic project). The aim of the redevelopment was to control the inverter output depending on the current power demand in order to optimise the use of the battery integrated in the system. All adjustments were only made for a special system with a Hoymiles HM-800 and a 24 V LiFePO4 battery.
 
-The current power requirement is read from a smart meter and transmitted to the DTU via LoRa. (The corresponding projects can be found on Github under Ausleser-fuer-Stromzaehler-Smartmeter-Landis-Gyr-E450 and Ausleser-fuer-Stromzaehler-Smartmeter-Ensor-eRS801.)
+The current power requirement is read from a smart meter and transmitted to the DTU via LoRa. (The corresponding projects can be found on Github under [Ausleser-fuer-Stromzaehler-Smartmeter-Landis-Gyr-E450](https://github.com/c-e-github/Ausleser-fuer-Stromzaehler-Smartmeter-Landis-Gyr-E450) and [Ausleser-fuer-Stromzaehler-Smartmeter-Ensor-eRS801](https://github.com/c-e-github/Ausleser-fuer-Stromzaehler-Smartmeter-Ensor-eRS801).)
 
 In contrast to OpenDTU, the project LoraDTU is not actively maintained and updated - it is more a proof of concept.
 (Nevertheless, any bug reports, suggestions for improvement and other comments on LoraDTU are welcome, please contact the autor C-E via k-l-p@gmx.de.)
@@ -25,7 +25,7 @@ LoraDTU is available free of charge under the open source licence (GNU General P
 To be updated: Several screenshots of the frontend can be found here: [Screenshots](docs/screenshots/README.md)
 
 
-## Currently supported Inverters
+## Supported Inverter
 
 | Model                | Required RF Module | DC Inputs | MPP-Tracker | AC Phases |
 | ---------------------| ------------------ | --------- | ----------- | --------- |
@@ -43,7 +43,6 @@ To be updated: Several screenshots of the frontend can be found here: [Screensho
 * Uses ESP32 microcontroller and NRF24L01+
 * Nice and fancy WebApp with visualization of current data
 * Firmware upgrade using the web UI
-* Time zone support
 * Ethernet support
 * English, german and french web interface
 * Displays (SSD1306, SH1106, PCD8544)
@@ -68,8 +67,7 @@ To be updated: Several screenshots of the frontend can be found here: [Screensho
 
 
 Sample Picture:
-To be updated:
-![NodeMCU-ESP32](docs/nodemcu-esp32.png)
+![Lilygo TTGO_ESP32_LoRa_V2](docs/TTGO_ESP32_LoRa_V2_pinout_pinmap.png)
 
 
 ### NRF24L01+ radio board
@@ -141,46 +139,6 @@ It is recommended to make all changes only in the  'platformio_override.ini', th
   * [Git Clone and compilation](https://youtu.be/9cA_esv3zeA)
   * [Full installation and compilation](https://youtu.be/xs6TqHn7QWM)
 
-### on the commandline with PlatformIO Core
-
-* Install [PlatformIO Core](https://platformio.org/install/cli)
-* Clone this repository (you really have to clone it, don't just download the ZIP file. During the build process the git hash gets embedded into the firmware. If you download the ZIP file a build error will occur)
-* Adjust the COM port in the file "platformio_override.ini". It occurs twice:
-  * upload_port
-  * monitor_port
-* build: `platformio run -e generic`
-* upload to esp module: `platformio run -e generic -t upload`
-* other options:
-  * clean the sources:  `platformio run -e generic -t clean`
-  * erase flash: `platformio run -e generic -t erase`
-
-
-#### Flash with esptool.py (Linux)
-
-```bash
-esptool.py --port /dev/ttyUSB0 --chip esp32 --before default_reset --after hard_reset \
-  write_flash --flash_mode dout --flash_freq 40m --flash_size detect \
-  0x0 firmware.factory.bin
-```
-
-#### Flash with Espressif Flash Download Tool (Windows)
-
-[Download link](https://www.espressif.com/en/support/download/other-tools)
-
-* On startup, select Chip Type -> "ESP32" / WorkMode -> "Develop"
-* Prepare all settings (see picture). Make sure to uncheck the `DoNotChgBin` option. Otherwise you may get errors like "invalid header".
-* ![flash tool image](docs/esp32_flash_download_tool.png)
-* Press "Erase" button on screen. Look into the terminal window, you should see dots appear. Then press  the "Boot" button on the ESP32 board. Wait for "FINISH" to see if flashing/erasing is done.
-* To program, press "Start" on screen, then the "Boot" button.
-* When flashing is complete (FINISH appears) then press the Reset button on the ESP32 board (or powercycle ) to start the LoraDTU application.
-
-#### Flash with ESP_Flasher (Windows)
-
-Users report that [ESP_Flasher](https://github.com/Jason2866/ESP_Flasher/releases/) is suitable for flashing LoraDTU on Windows.
-
-#### Flash with [ESP_Flasher](https://espressif.github.io/esptool-js/) - web version
-
-It is also possible to flash it via the web tools which might be more convenient and is platform independent.
 
 ## First configuration
 
