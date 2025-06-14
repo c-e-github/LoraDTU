@@ -101,7 +101,7 @@ Use a power suppy with 5 V and 1 A. The USB cable connected to your PC/Notebook 
 
 ### Schematic
 
-![Schematic](docs/Wiring_ESP32_Schematic.png)
+![Schematic](docs/Wiring_ESP32_Schematic.jpg)
 
 ### Symbolic view
 
@@ -139,7 +139,7 @@ It is recommended to make all changes only in the  'platformio_override.ini', th
   * monitor_port
 * Select the arrow button in the blue bottom status bar (PlatformIO: Upload) to compile and upload the firmware. During the compilation, all required libraries are downloaded automatically.
 * Under Linux, if the upload fails with error messages "Could not open /dev/ttyUSB0, the port doesn't exist", you can check via ```ls -la /dev/tty*``` to which group your port belongs to, and then add your user this group via ```sudo adduser <yourusername> dialout``` (if you are using ```arch-linux``` use: ```sudo gpasswd -a <yourusername> uucp```, this method requires a logout/login of the affected user).
-* (For OpenDTU there are two videos showing these steps - for LoraDTU this should be analog:
+* For OpenDTU there are two videos showing these steps - for LoraDTU this should be analog:
   * [Git Clone and compilation](https://youtu.be/9cA_esv3zeA)
   * [Full installation and compilation](https://youtu.be/xs6TqHn7QWM)
 
