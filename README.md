@@ -2,9 +2,13 @@
 
 A control unit for an inverter connected to a battery, charged by a balcony solar station, receiving electricity power data via LoRa radio.
 
+LoraDTU controls the inverter on the basis of the values read from the smart meter and transmitted via Lora so that the sum of current consumption and current feed-in is approximately zero (‘zero feed-in’). This is to ensure that only as much electricity is drawn from the battery as is currently needed in the household.
+
+Only during the day, when the battery is fully charged, the inverter is ramped up to feed excess energy (that can no longer be stored in the battery) into the grid.
+
 
 ###############################################################################  
-This readme file is not yet adapted to LoraDTU !!! (At the moment it is just a placeholder) ###############################################################################
+This readme file is not yet completely adapted to LoraDTU !!! (Some parts are still applicable to OpenDTU only.) ###############################################################################
 
 
 ## Background
@@ -36,14 +40,13 @@ To be updated: Several screenshots of the frontend can be found here: [Screensho
 ## Features for end users
 
 * Read live data from inverter
-* Show inverters internal event log
+* Show inverter internal event log
 * Show inverter information like firmware version, firmware build date, hardware revision and hardware version
 * Show and set the current inverter limit
 * Function to turn the inverter off and on
 * Uses ESP32 microcontroller and NRF24L01+
-* Nice and fancy WebApp with visualization of current data
+* WebApp with visualization of current data
 * Firmware upgrade using the web UI
-* Ethernet support
 * English, german and french web interface
 * Displays (SSD1306, SH1106, PCD8544)
 * Status LEDs
@@ -67,7 +70,7 @@ To be updated: Several screenshots of the frontend can be found here: [Screensho
 
 
 Sample Picture:
-![Lilygo TTGO_ESP32_LoRa_V2](docs/TTGO_ESP32_LoRa_V2_pinout_pinmap.png)
+![Lilygo TTGO_ESP32_LoRa_V2](docs/TTGO_ESP32_LoRa_V2_pinout_pinmap.jpg)
 
 
 ### NRF24L01+ radio board
@@ -111,12 +114,13 @@ The recommend way to change the pin assignment is by creating a custom [device p
 It is also possible to create a custom environment and compile the source yourself. This can be achieved by copying one of the [env:....] sections from 'platformio.ini' to 'platformio_override.ini' and editing the 'platformio_override.ini' file and add/change one or more of the following lines to the 'build_flags' parameter:
 
 ```makefile
--DHOYMILES_PIN_MISO=19
--DHOYMILES_PIN_MOSI=23
--DHOYMILES_PIN_SCLK=18
--DHOYMILES_PIN_IRQ=16
--DHOYMILES_PIN_CE=4
--DHOYMILES_PIN_CS=5
+    -DHOYMILES_PIN_MISO=12
+    -DHOYMILES_PIN_MOSI=13
+    -DHOYMILES_PIN_SCLK=14
+    -DHOYMILES_PIN_IRQ=0
+    -DHOYMILES_PIN_CE=4
+    -DHOYMILES_PIN_CS=15
+    -DLED1=25
 ```
 
 It is recommended to make all changes only in the  'platformio_override.ini', this is your personal copy.
@@ -128,19 +132,19 @@ It is recommended to make all changes only in the  'platformio_override.ini', th
 * Install [Visual Studio Code](https://code.visualstudio.com/download) (from now named "vscode")
 * In Visual Studio Code, install the [PlatformIO Extension](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide)
 * Install git and enable git in vscode - [git download](https://git-scm.com/downloads/) - [Instructions](https://www.jcchouinard.com/install-git-in-vscode/)
-* Clone this repository (you really have to clone it, don't just download the ZIP file. During the build process the git hash gets embedded into the firmware. If you download the ZIP file a build error will occur): Inside vscode open the command palette by pressing `CTRL` + `SHIFT` + `P`. Enter `git clone`, add the repository-URL `https://github.com/tbnobody/OpenDTU`. Next you have to choose (or create) a target directory.
+* Clone this repository (you really have to clone it, don't just download the ZIP file. During the build process the git hash gets embedded into the firmware. If you download the ZIP file a build error will occur): Inside vscode open the command palette by pressing `CTRL` + `SHIFT` + `P`. Enter `git clone`, add the repository-URL `https://github.com/c-e-github/LoraDTU`. Next you have to choose (or create) a target directory.
 * In vscode, choose File --> Open Folder and select the previously downloaded source code. (You have to select the folder which contains the "platformio.ini" and "platformio_override.ini" file)
 * Adjust the COM port in the file "platformio_override.ini" for your USB-to-serial-converter. It occurs twice:
   * upload_port
   * monitor_port
 * Select the arrow button in the blue bottom status bar (PlatformIO: Upload) to compile and upload the firmware. During the compilation, all required libraries are downloaded automatically.
 * Under Linux, if the upload fails with error messages "Could not open /dev/ttyUSB0, the port doesn't exist", you can check via ```ls -la /dev/tty*``` to which group your port belongs to, and then add your user this group via ```sudo adduser <yourusername> dialout``` (if you are using ```arch-linux``` use: ```sudo gpasswd -a <yourusername> uucp```, this method requires a logout/login of the affected user).
-* There are two videos showing these steps:
+* (For OpenDTU there are two videos showing these steps - for LoraDTU this should be analog:
   * [Git Clone and compilation](https://youtu.be/9cA_esv3zeA)
   * [Full installation and compilation](https://youtu.be/xs6TqHn7QWM)
 
 
-## First configuration
+## First configuration (not tested!)
 
 * After the initial flashing of the microcontroller, an Access Point called "LoraDTU-*" is opened. The default password is "loradtu".
 * Use a web browser to open the address [http://192.168.4.1](http://192.168.4.1)
@@ -184,8 +188,8 @@ A documentation of the Web API can be found here: [Web-API Documentation](docs/W
 
 ## Troubleshooting
 
-* First: When there is no light on the solar panels, the inverter completely turns off and does not answer to LoraDTU! So if you assembled your LoraDTU in the evening, wait until tomorrow.
-* When there is no data received from the inverter(s) - try to reduce the distance between the LoraDTU and the inverter (e.g. move it to the window towards the roof)
+* First: the inverter has to be connected to the battery, the inverter LED must light up.
+* When there is no data received from the inverter(s) - try to reduce the distance between the LoraDTU and the inverter
 * Under Settings -> DTU Settings you can increase the transmit power "PA level". Default is "minimum".
 * The NRF24L01+ needs relatively much current. With bad power supply (and especially bad cables!) a 10 µF capacitor soldered directly to the NRF24L01+ board connector brings more stability (pin 1+2 are the power supply). Note the polarity of the capacitor…
 * You can try to use an USB power supply with 1 A or more instead of connecting the ESP32 to the computer.
@@ -193,8 +197,7 @@ A documentation of the Web API can be found here: [Web-API Documentation](docs/W
 * Double check that you have a radio module NRF24L01+ with a plus sign at the end. NRF24L01 module without the plus are not compatible with this project.
 * There is no possibility of auto-discovering the inverters. Double check you have entered the serial numbers of the inverters correctly.
 * LoraDTU needs access to a working NTP server to get the current date & time.
-* When flashing with VSCode Plattform.IO fails and also with ESPRESSIF tool a demo bin file cannot be flashed to the ESP32 with error message "A fatal error occurred: MD5 of file does not match data in flash!" than un-wire/unconnect ESP32 from the NRF24L01+ board. Try to flash again and rewire afterwards.
-* Make sure to connect one inverter only to one DTU (Original, Ahoy, OpenDTU, LoraDTU doesn't make a difference). If you query a inverter by multiple DTUs you will get strange peaks in your values.
+* Make sure to connect the inverter only to one DTU (Original, Ahoy, OpenDTU, LoraDTU doesn't make a difference). If you query a inverter by multiple DTUs you will get strange peaks in your values.
 
 ## Related Projects
 
