@@ -26,7 +26,7 @@ LoraDTU is available free of charge under the open source licence (GNU General P
 
 ## Screenshots
 
-To be updated: Several screenshots of the frontend can be found here: [Screenshots](docs/screenshots/README.md)
+Several screenshots of the frontend for OpenDTU can be found here: [Screenshots](docs/screenshots/README.md) (needs To be updated for LoraDTU)
 
 
 ## Supported Inverter
@@ -40,11 +40,12 @@ To be updated: Several screenshots of the frontend can be found here: [Screensho
 ## Features for end users
 
 * Read live data from inverter
+* Switch display off or on
+* Switch between manual mode (set the current inverter limit manually) and automatic mode (set the current inverter limit automatically based on real-time smartmeter data received via Lora) 
+* Show the current inverter limit
 * Show inverter internal event log
 * Show inverter information like firmware version, firmware build date, hardware revision and hardware version
-* Show and set the current inverter limit
 * Function to turn the inverter off and on
-* Uses ESP32 microcontroller and NRF24L01+
 * WebApp with visualization of current data
 * Firmware upgrade using the web UI
 * English, german and french web interface
@@ -52,6 +53,7 @@ To be updated: Several screenshots of the frontend can be found here: [Screensho
 * Status LEDs
 * Configuration management (export / import configurations)
 * Dark Theme
+* Uses ESP32 microcontroller and NRF24L01+
 
 ## Features for developers
 
@@ -105,7 +107,7 @@ Use a power suppy with 5 V and 1 A. The USB cable connected to your PC/Notebook 
 
 ### Symbolic view
 
-![Symbolic](docs/Wiring_ESP32_Symbol.png)
+![Symbolic](docs/Wiring_ESP32_Symbol.jpg)
 
 ### Change pin assignment
 
