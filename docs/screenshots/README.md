@@ -16,7 +16,7 @@ Power Settings:
 
 ***
 Inverter Info:
-![Inverter Info](17_InverterInfo.png)
+![Inverter Info](17_InverterInfo.jpg)
 
 ***
 Eventlog:
