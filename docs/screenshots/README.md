@@ -4,7 +4,7 @@ here are some screenshots of LoraDTU's web interface.
 
 ***
 Live View:  
-![Live View](01_Live-View.jpg)
+![Live View](01_LiveView.jpg)
 
 ***
 Limit Settings:  
