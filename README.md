@@ -178,13 +178,22 @@ A documentation of the Web API can be found here: [Web-API Documentation](docs/W
   * The WebApp can be build using yarn
 
     ```bash
-    cd webapp
+    cd \PlatformIO\Projects\LoraDTU\webapp
     yarn install
     yarn build
     ```
 
   * The updated output is placed in the 'webapp_dist' directory
   * It is only necessary to build the webapp when you made changes to it
+
+  * For testing/developing you can use 
+
+    ```bash
+    cd \PlatformIO\Projects\LoraDTU\webapp
+    yarn dev
+    ```
+     and open http://localhost:5173/
+
 * Building the microcontroller firmware
   * Visual Studio Code with the PlatformIO Extension is required for building
 
