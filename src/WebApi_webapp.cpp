@@ -28,39 +28,46 @@ void WebApiWebappClass::init(AsyncWebServer& server)
     _server->on("/", HTTP_GET, [](AsyncWebServerRequest* request) {
         AsyncWebServerResponse* response = request->beginResponse_P(200, "text/html", file_index_html_start, file_index_html_end - file_index_html_start);
         response->addHeader("Content-Encoding", "gzip");
+        response->addHeader("Connection", "close");
         request->send(response);
     });
 
     _server->onNotFound([](AsyncWebServerRequest* request) {
         AsyncWebServerResponse* response = request->beginResponse_P(200, "text/html", file_index_html_start, file_index_html_end - file_index_html_start);
         response->addHeader("Content-Encoding", "gzip");
+        response->addHeader("Connection", "close");
         request->send(response);
     });
 
     _server->on("/index.html", HTTP_GET, [](AsyncWebServerRequest* request) {
         AsyncWebServerResponse* response = request->beginResponse_P(200, "text/html", file_index_html_start, file_index_html_end - file_index_html_start);
         response->addHeader("Content-Encoding", "gzip");
+        response->addHeader("Connection", "close");
         request->send(response);
     });
 
     _server->on("/favicon.ico", HTTP_GET, [](AsyncWebServerRequest* request) {
         AsyncWebServerResponse* response = request->beginResponse_P(200, "image/x-icon", file_favicon_ico_start, file_favicon_ico_end - file_favicon_ico_start);
+        response->addHeader("Connection", "close");
         request->send(response);
     });
 
     _server->on("/favicon.png", HTTP_GET, [](AsyncWebServerRequest* request) {
         AsyncWebServerResponse* response = request->beginResponse_P(200, "image/png", file_favicon_png_start, file_favicon_png_end - file_favicon_png_start);
+        response->addHeader("Connection", "close");
         request->send(response);
     });
 
     _server->on("/zones.json", HTTP_GET, [](AsyncWebServerRequest* request) {
         AsyncWebServerResponse* response = request->beginResponse_P(200, "application/json", file_zones_json_start, file_zones_json_end - file_zones_json_start);
         response->addHeader("Content-Encoding", "gzip");
+        response->addHeader("Connection", "close");
         request->send(response);
     });
 
     _server->on("/site.webmanifest", HTTP_GET, [](AsyncWebServerRequest* request) {
         AsyncWebServerResponse* response = request->beginResponse_P(200, "application/json", file_site_webmanifest_start, file_site_webmanifest_end - file_site_webmanifest_start);
+        response->addHeader("Connection", "close");
         request->send(response);
     });
 
@@ -82,6 +89,7 @@ void WebApiWebappClass::init(AsyncWebServer& server)
         } else {
             response = request->beginResponse_P(200, "text/javascript", file_app_js_start, file_app_js_end - file_app_js_start);
             response->addHeader("Content-Encoding", "gzip");
+            response->addHeader("Connection", "close");
         }
         // HTTP requires cache headers in 200 and 304 to be identical
         response->addHeader("Cache-Control", "public, must-revalidate");
@@ -90,6 +98,7 @@ void WebApiWebappClass::init(AsyncWebServer& server)
         AsyncWebServerResponse* response = request->beginResponse_P(200, "text/javascript", file_app_js_start, file_app_js_end - file_app_js_start);
         response->addHeader("Content-Encoding", "gzip");
 #endif
+        response->addHeader("Connection", "close");
         request->send(response);
     });
 }
