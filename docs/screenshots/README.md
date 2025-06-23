@@ -24,7 +24,7 @@ Eventlog:
 
 ***
 Network Admin:  
-![Network Admin](02_NetworkAdmin.png)
+![Network Admin](02_NetworkAdmin.jpg)
 
 ***
 NTP Admin:  
