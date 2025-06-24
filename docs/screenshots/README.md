@@ -80,4 +80,4 @@ NTP Info:
 
 ***
 Console:  
-![Console](18_Console.png)
+![Console](18_Console.jpg)
