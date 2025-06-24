@@ -7,10 +7,6 @@ LoraDTU controls the inverter on the basis of the values read from the smart met
 Only during the day, when the battery is fully charged, the inverter is ramped up to feed excess energy (that can no longer be stored in the battery) into the grid.
 
 
-###############################################################################  
-This readme file is not yet completely adapted to LoraDTU !!! (Some parts are still applicable to OpenDTU only.) ###############################################################################
-
-
 ## Background
 
 LoraDTU is based on [OpenDTU](https://github.com/tbnobody/OpenDTU) (by the way, a fantastic project). The aim of the redevelopment was to control the inverter output depending on the current power demand in order to optimise the use of the battery integrated in the system. All adjustments were only made for a special system with a Hoymiles HM-800 and a 24 V LiFePO4 battery.
