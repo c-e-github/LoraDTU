@@ -1,6 +1,6 @@
 # LoraDTU Screenshots
 
-here are some screenshots of LoraDTU's web interface.
+Here are some screenshots of LoraDTU's web interface.
 
 ***
 Live View:  
@@ -28,7 +28,7 @@ Network Admin:
 
 ***
 NTP Admin:  
-![NTP Admin](03_NtpAdmin.png)
+![NTP Admin](03_NtpAdmin.jpg)
 
 ***
 Inverter Admin:  
