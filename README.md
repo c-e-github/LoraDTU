@@ -22,7 +22,7 @@ LoraDTU is available free of charge under the open source licence (GNU General P
 
 ## Screenshots
 
-Several screenshots of the frontend for LoraDTU can be found here: [Screenshots](docs/screenshots/README.md) (some are still OpenDTU screenshots, need to be updated for LoraDTU)
+Several screenshots of the frontend for LoraDTU can be found here: [Screenshots](docs/screenshots/README.md) 
 
 
 ## Supported Inverter
