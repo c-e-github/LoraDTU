@@ -52,7 +52,7 @@ Device Manager Display:
 
 ***
 Device Manager LED:  
-![Device Manager Display](21_DeviceManager_LED.jpg)
+![Device Manager Display](DeviceManager_LED.jpg)
 
 ***
 Config Management:  
