@@ -32,52 +32,56 @@ NTP Admin:
 
 ***
 Inverter Admin:  
-![Inverter Admin](05_InverterAdmin.png)
+![Inverter Admin](05_InverterAdmin.jpg)
 
 ***
 Inverter Settings:  
-![Inverter Settings](13_InverterSettings.png)
+![Inverter Settings](13_InverterSettings.jpg)
 
 ***
 Security:  
-![Security](22_Security.png)
+![Security](22_Security.jpg)
 
 ***
 DTU Admin:  
-![DTU Admin](06_DtuAdmin.png)
+![DTU Admin](06_DtuAdmin.jpg)
 
 ***
 Device Manager Connection settings:  
-![Device Manager Pin](20_DeviceManager_Pin.png)
+![Device Manager Pin](20_DeviceManager_Pin.jpg)
 
 ***
 Device Manager Display:  
-![Device Manager Display](21_DeviceManager_Display.png)
+![Device Manager Display](21_DeviceManager_Display.jpg)
 
 ***
 Config Management:  
-![Config Management](14_ConfigManagement.png)
+![Config Management](14_ConfigManagement.jpg)
 
 ***
 Firmware Upgrade:  
-![Firmware Upgrade](07_FirmwareUpgrade.png)
+![Firmware Upgrade](07_FirmwareUpgrade.jpg)
 
 ***
 Reboot:  
-![Reboot](19_Reboot.png)
+![Reboot](19_Reboot.jpg)
 
 ***
 System Info:  
-![System Info](11_SystemInfo.png)
+![System Info](11_SystemInfo.jpg)
 
 ***
 Network Info:  
-![Network Info](08_NetworkInfo.png)
+![Network Info](08_NetworkInfo.jpg)
 
 ***
 NTP Info:  
-![NTP Info](09_NtpInfo.png)
+![NTP Info](09_NtpInfo.jpg)
 
 ***
 Console:  
 ![Console](18_Console.jpg)
+
+***
+About:  
+![Console](About.jpg)
