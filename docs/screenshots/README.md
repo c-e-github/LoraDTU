@@ -48,7 +48,11 @@ Device Manager Connection settings:
 
 ***
 Device Manager Display:  
-![Device Manager Display](21_DeviceManager_Display.png)
+![Device Manager Display](21_DeviceManager_Display.jpg)
+
+***
+Device Manager LED:  
+![Device Manager Display](21_DeviceManager_LED.jpg)
 
 ***
 Config Management:  
