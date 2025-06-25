@@ -35,10 +35,6 @@ Inverter Admin:
 ![Inverter Admin](05_InverterAdmin.jpg)
 
 ***
-Inverter Settings:  
-![Inverter Settings](13_InverterSettings.jpg)
-
-***
 Security:  
 ![Security](22_Security.jpg)
 
@@ -52,7 +48,7 @@ Device Manager Connection settings:
 
 ***
 Device Manager Display:  
-![Device Manager Display](21_DeviceManager_Display.jpg)
+![Device Manager Display](21_DeviceManager_Display.png)
 
 ***
 Config Management:  
