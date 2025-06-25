@@ -11,44 +11,24 @@ To change the device profile, navigate to the "Device Manager" and selected the 
 ```json
 [
     {
-        "name": "Generic NodeMCU 38 pin",
+        "name": "ttgo-lora32-v21",
         "nrf24": {
-            "miso": 19,
-            "mosi": 23,
-            "clk": 18,
-            "irq": 16,
+            "miso": 12,
+            "mosi": 13,
+            "clk": 14,
+            "irq": 0,
             "en": 4,
-            "cs": 5
+            "cs": 15
         },
         "eth": {
             "enabled": false,
-            "phy_addr": -1,
+            "phy_addr": 0,
             "power": -1,
-            "mdc": -1,
-            "mdio": -1,
-            "type": -1,
-            "clk_mode": -1
+            "mdc": 23,
+            "mdio": 18,
+            "type": 0,
+            "clk_mode": 0
         }
-    },
-    {
-        "name": "Generic NodeMCU 38 pin with SSD1306",
-        "nrf24": {
-            "miso": 19,
-            "mosi": 23,
-            "clk": 18,
-            "irq": 16,
-            "en": 4,
-            "cs": 5
-        },
-        "eth": {
-            "enabled": false,
-            "phy_addr": -1,
-            "power": -1,
-            "mdc": -1,
-            "mdio": -1,
-            "type": -1,
-            "clk_mode": -1
-        },
         "display": {
             "type": 2,
             "data": 21,
@@ -56,7 +36,7 @@ To change the device profile, navigate to the "Device Manager" and selected the 
         }
     },
     {
-        "name": "Olimex ESP32-POE",
+        "name": "Your ESP32 Board",
         "nrf24": {
             "miso": 15,
             "mosi": 2,
@@ -78,7 +58,7 @@ To change the device profile, navigate to the "Device Manager" and selected the 
 ]
 ```
 
-The json file can contain multiple profiles. Each profile requires a name and different parameters. If one parameter is not set, the default value, as compiled into the firmware is used. The example above shows all the currently supported values. Others may follow. Sample files for some boards can be found [here](DeviceProfiles/). This means you can just flash the generic bin file and upload the json file. Then you select your board and everything works hopyfully as expected.
+The json file can contain multiple profiles. Each profile requires a name and different parameters. If one parameter is not set, the default value, as compiled into the firmware is used.
 
 ## Implemented configuration values
 
@@ -109,5 +89,5 @@ The json file can contain multiple profiles. Each profile requires a name and di
 | display.clk   | number    | Clock Pin (e.g. SCL for i2c displays) required for SSD1306 and SH1106. Use 255 for not assigned pins. |
 | display.cs    | number    | Chip Select Pin required for PCD8544. Use 255 for not assigned pins. |
 | display.reset | number    | Reset Pin required for PCD8544, optional for all other displays. Use 255 for not assigned pins. |
-| led.led0      | number    | LED pin for network indication. Blinking = WLAN connected but NTP & MQTT (if enabled) disconnected. On = WLAN, NTP, MQTT connected. Off = Network not connected |
-| led.led1      | number    | LED pin for inverter indication. On = All inverters reachable & producing. Blinking = All inverters reachable but not producing. Off = At least one inverter is not reachable. Only inverters with polling enabled are considered. |
+| led.led0      | number    | LED pin for network indication. Blinking = WLAN connected but NTP disconnected. On = WLAN, NTP connected. Off = Network not connected |
+| led.led1      | number    | LED pin for inverter indication. Off = Inverter reachable & producing. Blinking = Inverter reachable but not producing. On = Inverter is not reachable. |
